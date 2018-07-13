@@ -10,4 +10,10 @@
 
 @interface TodayViewController : APPBaseViewController
 
+/** 类别 */
+@property (nonatomic,copy) NSString *type;
+
+/** 名字 */
+@property (nonatomic,copy) NSString *name;
+
 @end

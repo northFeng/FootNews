@@ -13,7 +13,7 @@
 ///测试服务器http://47.93.174.41:8100
 static NSString *const debugHostUrl = @"http://www.buyinball.com/app-web/api/";
 
-///release服务器                          
+///release服务器
 static NSString *const releaseHostUrl = @"http://www.buyinball.com/app-web/api/";
 
 

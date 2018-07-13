@@ -34,7 +34,7 @@
 ///设置导航栏样式
 - (void)setNaviBarState{
     
-    self.naviBarTitle = @"最新比分";
+    self.naviBarTitle = @"及时比分";
 }
 
 #pragma mark - 初始化界面基础数据
@@ -74,6 +74,7 @@
     [params setObject:@"1" forKey:@"status"];
     [params setObject:@"0" forKey:@"match_diff_day"];
     
+    //http://www.buyinball.com/app-web/api/match/qry_matchs?league_id=&status=1&match_diff_day=0
     //http://www.buyinball.com/app-web/api/match/qry_matchs?league_id=&status=1&match_diff_day=0
     [self requestNetDataUrl:@"match/qry_matchs" params:params];
 }

@@ -19,12 +19,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelType;
 
-@property (weak, nonatomic) IBOutlet UILabel *labelCount;
-
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
 
 
-- (void)setCellModel:(ListModel *)model;
+- (void)setCellModel:(TodayModel *)model;
 
 
 @end

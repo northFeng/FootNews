@@ -17,21 +17,15 @@
 
 
 
-- (void)setCellModel:(ListModel *)model{
+- (void)setCellModel:(TodayModel *)model{
     
-    kImgViewSetImage(_imgIcon, model.info_pic, @"img_holder");
+    kImgViewSetImage(_imgIcon, model.imglink, @"img_holder");
     
-    _labelTitle.text = model.info_title;
+    _labelTitle.text = model.title;
     
-    _labelType.text = model.info_type_name;
+    _labelType.text = model.content168;
     
-    _labelCount.text = [NSString stringWithFormat:@"%@阅读量",model.comment_num];
-    
-    NSArray *array = [model.info_time componentsSeparatedByString:@" "];
-    NSString *timeStr = array.count ? array[0] : @"";
-    array = timeStr.length ? [timeStr componentsSeparatedByString:@"-"] : nil;
-    timeStr = [NSString stringWithFormat:@"%@-%@",array[array.count - 2],array[array.count - 1]];
-    _labelTime.text = timeStr;
+    _labelTime.text = model.author;
     
 }
 

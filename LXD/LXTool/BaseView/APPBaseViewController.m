@@ -141,7 +141,7 @@
     __weak typeof(self) weakSelf = self;
 
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        weakSelf.page = 1;
+        weakSelf.page = 0;
         [weakSelf requestNetData];
     }];
 
@@ -180,23 +180,24 @@
     [self startWaitingAnimating];
     self.tableView.userInteractionEnabled = NO;
     
-    [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [APPHttpTool getWithUrl:url params:params success:^(id response, NSInteger code) {
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
         weakSelf.tableView.userInteractionEnabled = YES;
         ///隐藏加载动画
         [weakSelf stopWaitingAnimating];
         
-        NSString *message = [response objectForKey:@"result_msg"];
+        //NSString *message = [response objectForKey:@"result_msg"];
+        
         if (code == 0) {
             //请求成功
             //隐藏无网占位图
             
-            [weakSelf requestNetDataSuccess:response[@"qry_infos"]];
+            [weakSelf requestNetDataSuccess:response[@"root"]];
         }else{
             weakSelf.page --;
             // 错误处理
-            [weakSelf showMessage:message];
+            [weakSelf showMessage:@"网络有问题..."];
         }
         
     } fail:^(NSError *error) {

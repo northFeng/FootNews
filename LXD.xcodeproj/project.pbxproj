@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		077CCDD9FB55421EC99E8E2F /* libPods-LXD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FB55AAA709120033C45915 /* libPods-LXD.a */; };
+		AB0393B220F846D300C656B7 /* GFMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0393B020F846D300C656B7 /* GFMessageCell.m */; };
+		AB0393B320F846D300C656B7 /* GFMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0393B120F846D300C656B7 /* GFMessageCell.xib */; };
+		AB0393B620F8483900C656B7 /* GFMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0393B520F8483900C656B7 /* GFMessageModel.m */; };
+		AB0393B920F88EBB00C656B7 /* CFTradeTabBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0393B720F88EBB00C656B7 /* CFTradeTabBtnView.m */; };
+		AB0393BC20F88EE900C656B7 /* TotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0393BB20F88EE900C656B7 /* TotalViewController.m */; };
 		AB5A104520F4634500322FD8 /* GFPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5A104420F4634500322FD8 /* GFPersonModel.m */; };
 		AB5A104920F4654800322FD8 /* GFPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5A104720F4654800322FD8 /* GFPersonCell.m */; };
 		AB5A104A20F4654800322FD8 /* GFPersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB5A104820F4654800322FD8 /* GFPersonCell.xib */; };
@@ -69,6 +74,15 @@
 /* Begin PBXFileReference section */
 		23FB55AAA709120033C45915 /* libPods-LXD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LXD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFA8FF43587D7222578C906 /* Pods-LXD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXD.release.xcconfig"; path = "Pods/Target Support Files/Pods-LXD/Pods-LXD.release.xcconfig"; sourceTree = "<group>"; };
+		AB0393AF20F846D300C656B7 /* GFMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFMessageCell.h; sourceTree = "<group>"; };
+		AB0393B020F846D300C656B7 /* GFMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFMessageCell.m; sourceTree = "<group>"; };
+		AB0393B120F846D300C656B7 /* GFMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFMessageCell.xib; sourceTree = "<group>"; };
+		AB0393B420F8483900C656B7 /* GFMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFMessageModel.h; sourceTree = "<group>"; };
+		AB0393B520F8483900C656B7 /* GFMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFMessageModel.m; sourceTree = "<group>"; };
+		AB0393B720F88EBB00C656B7 /* CFTradeTabBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTradeTabBtnView.m; sourceTree = "<group>"; };
+		AB0393B820F88EBB00C656B7 /* CFFengTabBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFFengTabBtnView.h; sourceTree = "<group>"; };
+		AB0393BA20F88EE900C656B7 /* TotalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalViewController.h; sourceTree = "<group>"; };
+		AB0393BB20F88EE900C656B7 /* TotalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalViewController.m; sourceTree = "<group>"; };
 		AB5A104320F4634500322FD8 /* GFPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFPersonModel.h; sourceTree = "<group>"; };
 		AB5A104420F4634500322FD8 /* GFPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFPersonModel.m; sourceTree = "<group>"; };
 		AB5A104620F4654800322FD8 /* GFPersonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFPersonCell.h; sourceTree = "<group>"; };
@@ -303,6 +317,10 @@
 		AB90362A20C9217200592811 /* LXViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AB0393B820F88EBB00C656B7 /* CFFengTabBtnView.h */,
+				AB0393B720F88EBB00C656B7 /* CFTradeTabBtnView.m */,
+				AB0393BA20F88EE900C656B7 /* TotalViewController.h */,
+				AB0393BB20F88EE900C656B7 /* TotalViewController.m */,
 				AB90363020C9217200592811 /* LXTodayData */,
 				AB90362B20C9217200592811 /* LXCDD */,
 				AB90363520C9217200592811 /* LXCSD */,
@@ -425,6 +443,8 @@
 			children = (
 				AB5A104320F4634500322FD8 /* GFPersonModel.h */,
 				AB5A104420F4634500322FD8 /* GFPersonModel.m */,
+				AB0393B420F8483900C656B7 /* GFMessageModel.h */,
+				AB0393B520F8483900C656B7 /* GFMessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -435,6 +455,9 @@
 				AB5A104620F4654800322FD8 /* GFPersonCell.h */,
 				AB5A104720F4654800322FD8 /* GFPersonCell.m */,
 				AB5A104820F4654800322FD8 /* GFPersonCell.xib */,
+				AB0393AF20F846D300C656B7 /* GFMessageCell.h */,
+				AB0393B020F846D300C656B7 /* GFMessageCell.m */,
+				AB0393B120F846D300C656B7 /* GFMessageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -641,6 +664,7 @@
 				ABAD5DE720F0C53500DC8B5F /* TodayHomeCell.xib in Resources */,
 				AB5A104A20F4654800322FD8 /* GFPersonCell.xib in Resources */,
 				AB9035F820C920EB00592811 /* Assets.xcassets in Resources */,
+				AB0393B320F846D300C656B7 /* GFMessageCell.xib in Resources */,
 				ABAD5DF520F0FB4400DC8B5F /* GFScoreCell.xib in Resources */,
 				ABAD5DEA20F0C8D100DC8B5F /* img_holder.png in Resources */,
 				AB9035F620C920EA00592811 /* Main.storyboard in Resources */,
@@ -712,6 +736,7 @@
 				ABAD5DF420F0FB4400DC8B5F /* GFScoreCell.m in Sources */,
 				AB90365820C939FF00592811 /* TodayViewController.m in Sources */,
 				AB90363A20C9217200592811 /* GFTabBarController.m in Sources */,
+				AB0393B220F846D300C656B7 /* GFMessageCell.m in Sources */,
 				AB90365520C9381B00592811 /* ExampleViewController.m in Sources */,
 				ABAD5DE620F0C53500DC8B5F /* TodayHomeCell.m in Sources */,
 				ABAD5DDB20F0B34D00DC8B5F /* UIView+SDExtension.m in Sources */,
@@ -720,9 +745,12 @@
 				AB90364820C92A0500592811 /* APPBaseViewController.m in Sources */,
 				AB5A104D20F4AA8D00322FD8 /* WebUrlViewController.m in Sources */,
 				ABAD5DDC20F0B34D00DC8B5F /* SDViewController.m in Sources */,
+				AB0393B620F8483900C656B7 /* GFMessageModel.m in Sources */,
+				AB0393B920F88EBB00C656B7 /* CFTradeTabBtnView.m in Sources */,
 				ABAD5DF020F0F5C600DC8B5F /* ScoreModel.m in Sources */,
 				AB90365E20C93A1F00592811 /* CSDViewController.m in Sources */,
 				ABAD5DE220F0B34D00DC8B5F /* TAAbstractDotView.m in Sources */,
+				AB0393BC20F88EE900C656B7 /* TotalViewController.m in Sources */,
 				ABE023A220CE51E500C440D7 /* TodayModel.m in Sources */,
 				AB90364F20C930F200592811 /* MBProgressHUDTool.m in Sources */,
 				ABAD5DDE20F0B34D00DC8B5F /* TADotView.m in Sources */,

@@ -11,7 +11,7 @@
 //常量命名规则（驼峰式命名规则），所有的单词首字母大写和加上与类名有关的前缀:
 
 //tabBar背景颜色
-#define ColorTabBar RGBA(255,255,255, 0.7)
+#define ColorTabBar RGBA(255,255,255, 1)
 //分割线
 #define ColorSegmentation RGB(237,237,237)
 

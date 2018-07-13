@@ -39,9 +39,10 @@
         //NSLog(@"请求结果=%@",responseObject);
         
         if (success) {
-            NSInteger code = [responseObject[@"result_code"] integerValue];
-            if (code == 0){
-                success(responseObject,code);
+            //NSInteger code = [responseObject[@"result_code"] integerValue];
+            
+            if (responseObject){
+                success(responseObject,0);
             } else {
                 if (fail) {
                     fail(nil);

@@ -15,9 +15,10 @@
 
 #import "GFTabBarController.h"
 
-#import "TodayViewController.h"
-#import "CDDViewController.h"
-#import "CSDViewController.h"
+//#import "TodayViewController.h"
+//#import "CDDViewController.h"
+//#import "CSDViewController.h"
+#import "TotalViewController.h"
 
 
 // 引入JPush功能所需头文件
@@ -219,18 +220,26 @@
 ///设置根视图
 - (void)setRootViewController{
     
-    TodayViewController *todayVC = [[TodayViewController alloc] init];
-    CDDViewController *cddVC = [[CDDViewController alloc] init];
-    CSDViewController *csdVC = [[CSDViewController alloc] init];
+//    TodayViewController *todayVC = [[TodayViewController alloc] init];
+//    CDDViewController *cddVC = [[CDDViewController alloc] init];
+//    CSDViewController *csdVC = [[CSDViewController alloc] init];
+    
+    TotalViewController *totalVCOne = [[TotalViewController alloc] init];
+    totalVCOne.type = 0;
+    
+    TotalViewController *totalVCTwo = [[TotalViewController alloc] init];
+    totalVCTwo.type = 1;
     
     GFTabBarController *gfTabBar = [GFTabBarController sharedInstance];
-    gfTabBar.viewControllers = @[todayVC,cddVC,csdVC];//添加子视图
+    gfTabBar.viewControllers = @[totalVCOne,totalVCTwo];//添加子视图
+    
+    
     //默认图片
-    NSArray *arrayNomal = @[@"today_normal",@"foot_normal",@"basket_1_normal"];
+    NSArray *arrayNomal = @[@"global_normal",@"foot_normal"];
     //选中按钮的图片
-    NSArray *arraySelect = @[@"today_select",@"foot",@"basket_1"];
+    NSArray *arraySelect = @[@"global",@"foot"];
     //item的标题
-    NSArray *arrayTitle = @[@"头条",@"比分",@"球星"];
+    NSArray *arrayTitle = @[@"国际足球",@"中国足球"];
     
     [gfTabBar creatItemsWithDefaultIndex:0 normalImageNameArray:arrayNomal selectImageArray:arraySelect itemsTitleArray:arrayTitle];//设置items并设置第一个显示位置
     

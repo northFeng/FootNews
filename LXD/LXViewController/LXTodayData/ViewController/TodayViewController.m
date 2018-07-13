@@ -24,7 +24,8 @@
 /** banner数组 */
 @property (nonatomic,copy) NSArray *arrayBanners;
 
-
+/** 数量 */
+@property (nonatomic,assign) NSInteger index;
 
 @end
 
@@ -52,6 +53,11 @@
 #pragma mark - 初始化界面基础数据
 - (void)initData {
     
+    if ([_name isEqualToString:@"最新"]) {
+        _index = 3;
+    }else{
+        _index = 0;
+    }
     _arrayBanners = [NSArray array];
     
 }
@@ -66,31 +72,41 @@
     [self addTableViewRefreshView];
     
     //改变tableview的frame
-    self.tableView.frame = CGRectMake(0, kTopNaviBarHeight, kScreenWidth, kScreenHeight - (kTopNaviBarHeight + kTabBarHeight));
+    self.tableView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - (kTopNaviBarHeight + kTabBarHeight));
     self.tableView.backgroundColor = [UIColor whiteColor];
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"TodayHomeCell" bundle:nil] forCellReuseIdentifier:@"TodayHomeCell"];
     
-    //创建轮播图
-    // 网络加载 --- 创建带标题的图片轮播器
-    _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 180) delegate:nil placeholderImage:[UIImage imageNamed:@"img_holder"]];
-    _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-    _cycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
-
-    self.tableView.tableHeaderView = _cycleScrollView;
+    if ([_name isEqualToString:@"最新"]) {
+        
+        //创建轮播图
+        // 网络加载 --- 创建带标题的图片轮播器
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 180) delegate:nil placeholderImage:[UIImage imageNamed:@"img_holder"]];
+        _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+        _cycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
+        
+        self.tableView.tableHeaderView = _cycleScrollView;
+        
+        //点击
+        APPWeakSelf
+        _cycleScrollView.clickItemOperationBlock = ^(NSInteger index) {
+            NSLog(@">>>>>  %ld", (long)index);
+            APPWebViewVC *webVC = [[APPWebViewVC alloc] init];
+            TodayModel *model = weakSelf.arrayDataList[index];
+            webVC.htmlUrl = model.url;
+            webVC.naviBarTitle = model.author;
+            [weakSelf.navigationController pushViewController:webVC animated:YES];
+        };
+    }
     
-    //点击
-    _cycleScrollView.clickItemOperationBlock = ^(NSInteger index) {
-        NSLog(@">>>>>  %ld", (long)index);
-    };
 }
 
 - (void)setArrayBanners:(NSArray *)arrayBanners{
     _arrayBanners = arrayBanners;
     
     NSMutableArray *imgArray = [NSMutableArray array];
-    for (BannerModel *model in arrayBanners) {
-        [imgArray addObject:model.info_pic];
+    for (TodayModel *model in arrayBanners) {
+        [imgArray addObject:model.imglink];
     }
     _cycleScrollView.imageURLStringsGroup = imgArray;
 }
@@ -104,16 +120,28 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
-    [params setValue:@"0" forKey:@"info_type"];
-    [params setValue:@"1.2.7" forKey:@"app_version"];
-    [params setValue:@"360" forKey:@"channel_no"];
+    [params setValue:@"" forKey:@"keyword"];
+    [params setValue:@"0" forKey:@"uid"];
     
-    [params setValue:@"10" forKey:@"page_size"];
-    [params setValue:[NSNumber numberWithInteger:self.page] forKey:@"page_index"];
+    //类别
+    [params setValue:_type forKey:@"type"];
     
-    //?page_size=10&info_type=0&app_version=1.2.7&channel_no=360&page_index=1
-    //?page_size=10&info_type=0&app_version=1.2.7&channel_no=360&page_index=2
-    [self requestNetDataUrl:@"info/qry_infos" params:params];
+    if (![_name isEqualToString:@"最新"]) {
+        [params setValue:_name forKey:@"sourceName"];
+    }
+    
+    [params setValue:@"20" forKey:@"opc"];
+    [params setValue:[NSNumber numberWithInteger:self.page] forKey:@"npc"];
+    
+    //http://api.football.app887.com/api/Articles.action?keyword=&npc=0&opc=20&type=%E4%B8%AD%E5%9B%BD%E8%B6%B3%E7%90%83&uid=0
+    //http://api.football.app887.com/api/Articles.action?keyword=&npc=0&opc=20&sourceName=%E4%B8%AD%E8%B6%85&type=%E4%B8%AD%E5%9B%BD%E8%B6%B3%E7%90%83&uid=0
+    //http://api.football.app887.com/api/Articles.action?keyword=&npc=0&opc=20&sourceName=%E5%9B%BD%E8%B6%B3&type=%E4%B8%AD%E5%9B%BD%E8%B6%B3%E7%90%83&uid=0
+    
+    //http://api.football.app887.com/api/Articles.action?keyword=&npc=0&opc=20&sourceName=%E8%A5%BF%E7%94%B2&type=%E5%9B%BD%E9%99%85%E8%B6%B3%E7%90%83&uid=0
+    //http://api.football.app887.com/api/Articles.action?keyword=&npc=0&opc=20&type=%E5%9B%BD%E9%99%85%E8%B6%B3%E7%90%83&uid=0
+    //http://api.football.app887.com/api/Articles.action?keyword=&npc=1&opc=20&type=%E5%9B%BD%E9%99%85%E8%B6%B3%E7%90%83&uid=0
+    //http://api.football.app887.com/api/Articles.action?keyword=&npc=2&opc=20&type=%E5%9B%BD%E9%99%85%E8%B6%B3%E7%90%83&uid=0
+    [self requestNetDataUrl:@"http://api.football.app887.com/api/Articles.action" params:params];
     
 }
 
@@ -122,25 +150,36 @@
     
     if (dicData) {
         
-        _modelData = [[TodayModel alloc] init];
-        [_modelData yy_modelSetWithDictionary:dicData];
+        NSArray *listData = dicData[@"list"];
         
-        if (self.page == 1) {
-            self.arrayBanners = _modelData.banners;
+        if (self.page == 0) {
+            
             [self.arrayDataList removeAllObjects];
-            for (ListModel *model in _modelData.data) {
-                [self.arrayDataList addObject:model];
-            }
-        }else{
-            for (ListModel *model in _modelData.data) {
-                [self.arrayDataList addObject:model];
-            }
+            
         }
         
-        if (_modelData.data.count < 10) {
+        for (NSDictionary *dic in listData) {
+            
+            TodayModel *model = [[TodayModel alloc] init];
+            [model yy_modelSetWithDictionary:dic];
+            
+            [self.arrayDataList addObject:model];
+        }
+        
+        if (listData.count < 20) {
             self.tableView.mj_footer.hidden = YES;
         }else{
             self.tableView.mj_footer.hidden = NO;
+        }
+    }
+    
+    if ([_name isEqualToString:@"最新"]) {
+        if (self.page == 0) {
+            if (self.arrayDataList.count > 5) {
+                //取出前三个数据
+                NSArray *array = @[self.arrayDataList[0],self.arrayDataList[1],self.arrayDataList[2]];
+                self.arrayBanners = array;
+            }
         }
     }
     
@@ -164,14 +203,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return self.arrayDataList.count;
+    return self.arrayDataList.count - _index;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TodayHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TodayHomeCell" forIndexPath:indexPath];
     
-    [cell setCellModel:self.arrayDataList[indexPath.row]];
+    [cell setCellModel:self.arrayDataList[indexPath.row + _index]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -181,7 +220,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 120;
+    return 130;
 }
 
 
@@ -198,9 +237,9 @@
     NSLog(@"点击Cell");
     
     APPWebViewVC *webVC = [[APPWebViewVC alloc] init];
-    ListModel *model = self.arrayDataList[indexPath.row];
-    webVC.htmlUrl = model.info_url;
-    webVC.naviBarTitle = model.info_type_name;
+    TodayModel *model = self.arrayDataList[indexPath.row + _index];
+    webVC.htmlUrl = model.url;
+    webVC.naviBarTitle = model.author;
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
