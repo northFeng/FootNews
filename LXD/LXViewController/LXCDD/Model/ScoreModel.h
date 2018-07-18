@@ -10,108 +10,43 @@
 
 @interface ScoreModel : NSObject
 
-//上部
-/** 标题 */
-@property (nonatomic,copy) NSString *league_name;
+/** <#title#> */
+@property (nonatomic,copy) NSString *title;
 
-/** 时间 */
-@property (nonatomic,copy) NSString *match_time;
+/** <#title#> */
+@property (nonatomic,copy) NSString *team;
 
-/** 颜色 */
-@property (nonatomic,copy) NSString *league_color;
+/** <#title#> */
+@property (nonatomic,copy) NSString *input_time;
 
-//中部
-
-/** 黄色数字 */
-@property (nonatomic,copy) NSString *h_yellow;
-
-/** 中括号 */
-@property (nonatomic,copy) NSString *home_team_rank;
-
-/** 左边队名 */
-@property (nonatomic,copy) NSString *home_team_name;
-
-/** 比分 */
-@property (nonatomic,copy) NSString *home_team_score;
-
-
-/** 右边黄色数字 */
-@property (nonatomic,copy) NSString *g_yellow;
-
-/** 中括号数字 */
-@property (nonatomic,copy) NSString *guest_team_rank;
-
-/** 队名 */
-@property (nonatomic,copy) NSString *guest_team_name;
-
-/** 比分 */
-@property (nonatomic,copy) NSString *guest_team_score;
-
-
-//下部
-/** 左边 */
-@property (nonatomic,copy) NSString *asian_odds;
-
-/** 右边 */
-@property (nonatomic,copy) NSString *europe_odds;
-
-/** 评论数 */
-@property (nonatomic,copy) NSString *comment_num;
-
-
+/** <#title#> */
+@property (nonatomic,copy) NSString *file;
 
 
 @end
 
 /**
- 
- //底部
-"asian_odds":"1.16,-0/0.5,0.72",--1
- 
-"cap_type_name":"平半",
- 
-"comment_num":80,--3
-
-"europe_odds":"2.31,3.95,2.42",--2
- 
- 
- //右边
-"g_yellow":"2",-4
-"guest_red_card":"0",
-"guest_team_first_score":"0",
-"guest_team_id":"21339",
-"guest_team_name":"比尔利克",//队名-2
-"guest_team_rank":"8",//-3
-"guest_team_score":"0",//得分-1
- 
- //左边
-"h_yellow":"3",-4
-"home_red_card":"0",
-"home_team_first_score":"0",
-"home_team_id":"13542",
-"home_team_logo":"http://www.buyinball.com/img/74fc224b64e0451fb453f9f9b3243f27.jpeg",
-"home_team_name":"阿西里斯卡BK",-2
-"home_team_rank":"10",-3
-"home_team_score":"2",-1
- 
- 
-"is_analysis":0,
-"is_bet":1,
-"is_live":1,
-"is_top":0,
-"is_video":1,
-"league_color":"#e8811a",
- 
- //上
-"league_name":"瑞典丙",--1
- 
-"mark_analy":0,
-"match_id":"201807070001436000216078",
- 
- 
-"match_time":"2018-07-07 19:30:00",--2
-"running_time":4572,
-"status_cd":4,
-"update_time":1530969124277
+"id":"213316",
+"show_type":"1",
+"title":"中超二次报名汇总：拉米雷斯、热尔维尼奥撤销报名",
+"input_time":"2018-07-16 13:35",
+"description":"北京时间7月16日，明晚，中超第12轮比赛就将战火重燃。夏季转会期，苏宁球员拉米雷斯、华夏幸福球员热尔维尼奥等多名球员都被球队撤销了报名，以下是中超16队具体二次报名情况：广州恒大：撤下：古德利、王上源、王军辉、金英权、谭凯元补报：梅方、保利尼奥、塔利斯卡、王世龙、王进泽上海上港：撤下：胡靖航、高海生、高志杰、江子磊、魏来补报：张恩格、聂孟、周正、李申圆、朱佳毅天津权健：补报：张修维、钱宇淼领队：",
+"comment_total":"71",
+"like_total":"58",
+"view_total":"833",
+"is_plugin":"0",
+"is_video":"0",
+"type":"3",
+"extras":"",
+"key":"5yrfQ-eNiXS",
+"module":"content",
+"value":"213316",
+"file":Array[1],
+"team":[
+        {
+            "title":"北京中赫国安"
+        }
+        ],
+"hot_count":1304
  
  */

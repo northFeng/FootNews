@@ -8,6 +8,7 @@
 
 #import "GFNavigationController.h"
 
+
 @interface GFNavigationController ()
 
 @end
@@ -17,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +54,9 @@
 - (BOOL)prefersStatusBarHidden{
     return [self.visibleViewController prefersStatusBarHidden];
 }
+
+
+
 
 
 

@@ -10,4 +10,11 @@
 
 @implementation ScoreModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+              @"team" : @"team[0].title",
+              @"file" : @"file[0].path"
+             };
+}
+
 @end

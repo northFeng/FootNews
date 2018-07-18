@@ -19,13 +19,34 @@
 
 - (void)setCellModel:(TodayModel *)model{
     
-    kImgViewSetImage(_imgIcon, model.imglink, @"img_holder");
+    kImgViewSetImage(_imgIcon, model.imgurl, @"img_holder");
     
     _labelTitle.text = model.title;
     
-    _labelType.text = model.content168;
+    _labelType.text = [NSString stringWithFormat:@"小编:%@",model.authorName];
     
-    _labelTime.text = model.author;
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:[model.newstime doubleValue]/1000.0];
+    NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *timeString = [dateformatter stringFromDate:date];
+    _labelTime.text = timeString;
+    
+}
+
+
+- (void)setCellModelTwo:(ScoreModel *)model{
+    
+    kImgViewSetImage(_imgIcon, model.file, @"img_holder");
+    
+    _labelTitle.text = model.title;
+    
+    _labelType.text = model.team;
+    
+//    NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:[model.newstime doubleValue]/1000.0];
+//    NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
+//    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+//    NSString *timeString = [dateformatter stringFromDate:date];
+    _labelTime.text = model.input_time;
     
 }
 

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="151" id="KGk-i7-Jjw" customClass="TBCell">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="151"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="338" height="150.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_holder.png" translatesAutoresizingMaskIntoConstraints="NO" id="3sC-jO-X1z">
+                        <rect key="frame" x="15" y="8" width="308" height="134"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0j-OA-q4r">
+                        <rect key="frame" x="15" y="8" width="308" height="135"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="世界杯各小组大师预测世界杯各小组大师预测" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dny-ad-M8p">
+                                <rect key="frame" x="8" y="93" width="290" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="世界杯各小组大师预测" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnx-WV-r1D">
+                                <rect key="frame" x="8" y="64" width="290" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29968089788732394" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dny-ad-M8p" firstAttribute="top" secondItem="cnx-WV-r1D" secondAttribute="bottom" constant="8" id="0NZ-MN-JJ6"/>
+                            <constraint firstItem="cnx-WV-r1D" firstAttribute="leading" secondItem="Dny-ad-M8p" secondAttribute="leading" id="Oxs-HC-mTs"/>
+                            <constraint firstItem="cnx-WV-r1D" firstAttribute="top" secondItem="D0j-OA-q4r" secondAttribute="top" constant="64" id="WKk-62-sfR"/>
+                            <constraint firstItem="cnx-WV-r1D" firstAttribute="trailing" secondItem="Dny-ad-M8p" secondAttribute="trailing" id="XKe-pf-A2K"/>
+                            <constraint firstAttribute="trailing" secondItem="cnx-WV-r1D" secondAttribute="trailing" constant="10" id="XPK-ih-qyT"/>
+                            <constraint firstItem="cnx-WV-r1D" firstAttribute="leading" secondItem="D0j-OA-q4r" secondAttribute="leadingMargin" id="iLc-eP-ivt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3sC-jO-X1z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="M4s-9O-EQN"/>
+                    <constraint firstAttribute="trailing" secondItem="D0j-OA-q4r" secondAttribute="trailing" constant="15" id="OwY-Tw-LIM"/>
+                    <constraint firstItem="3sC-jO-X1z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="VED-TV-8mn"/>
+                    <constraint firstAttribute="bottom" secondItem="3sC-jO-X1z" secondAttribute="bottom" constant="8" id="ZEV-5u-STE"/>
+                    <constraint firstAttribute="trailing" secondItem="3sC-jO-X1z" secondAttribute="trailing" constant="15" id="cPe-YE-YwG"/>
+                    <constraint firstItem="D0j-OA-q4r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="mYQ-gm-NuY"/>
+                    <constraint firstItem="D0j-OA-q4r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="oyQ-Zo-68z"/>
+                    <constraint firstAttribute="bottom" secondItem="D0j-OA-q4r" secondAttribute="bottom" constant="8" id="sZq-IH-I07"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="blcakView" destination="D0j-OA-q4r" id="ptn-XM-6XE"/>
+                <outlet property="imgBack" destination="3sC-jO-X1z" id="Vha-PW-wzW"/>
+                <outlet property="labelSum" destination="Dny-ad-M8p" id="ofh-Cx-0aZ"/>
+                <outlet property="labelTitle" destination="cnx-WV-r1D" id="AE2-U8-feU"/>
+            </connections>
+            <point key="canvasLocation" x="43" y="107.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_holder.png" width="750" height="425"/>
+    </resources>
+</document>

@@ -107,8 +107,10 @@
         if (success) {
             
             //NSInteger code = (NSInteger)responseObject[@"message"][@"code"];
-            NSInteger code = [responseObject[@"result_code"] integerValue];
-            if (code == 0){
+            NSInteger code = [responseObject[@"status_code"] integerValue];
+            
+            if (code == 200){
+                
                 success(responseObject,code);
             } else {
                 if (fail) {

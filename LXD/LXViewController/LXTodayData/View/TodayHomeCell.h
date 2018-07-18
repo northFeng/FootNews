@@ -10,6 +10,8 @@
 
 #import "TodayModel.h"
 
+#import "ScoreModel.h"
+
 @interface TodayHomeCell : UITableViewCell
 
 
@@ -23,6 +25,8 @@
 
 
 - (void)setCellModel:(TodayModel *)model;
+
+- (void)setCellModelTwo:(ScoreModel *)model;
 
 
 @end

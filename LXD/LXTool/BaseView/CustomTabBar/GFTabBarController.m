@@ -13,7 +13,7 @@
 //tabBar背景颜色
 #define ColorTabBar RGBA(255,255,255, 1)
 //分割线
-#define ColorSegmentation RGB(237,237,237)
+#define ColorSegmentation RGB(178,34,34)
 
 //tab图片宽和高
 #define Image_Width 29

@@ -44,7 +44,7 @@ SingletonImplementation(MBProgressHUDTool)
 
 - (void)showTextToastView:(NSString *)message view:(UIView *)view {
     //默认1秒
-    [self showTextToastView:message afterDelay:1.0f view:view];
+    [self showTextToastView:message afterDelay:2.0f view:view];
 }
 
 - (void)showTextToastView:(NSString *)message afterDelay:(NSTimeInterval)delay view:(UIView *)view {

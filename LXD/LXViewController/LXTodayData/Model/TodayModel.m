@@ -33,6 +33,13 @@
              };
 }
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             //@"imgurl" : @[@"imgurl",@"authorHeadImage"],
+             @"title" : @[@"title",@"shorttitle"]
+             };
+}
+
     
 
 @end

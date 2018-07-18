@@ -70,60 +70,60 @@
 @property (nonatomic,copy) NSArray *data;
 
 
-
-/** ID */
-@property (nonatomic,copy) NSString *ID;
-
-/** htmlUrl */
-@property (nonatomic,copy) NSString *url;
-
-/** 介绍 */
-@property (nonatomic,copy) NSString *content168;
-
-/** 图片 */
-@property (nonatomic,copy) NSString *imglink;
+/** pid */
+@property (nonatomic,copy) NSString *pid;
 
 /** 标题 */
 @property (nonatomic,copy) NSString *title;
 
 /** 作者 */
-@property (nonatomic,copy) NSString *author;
+@property (nonatomic,copy) NSString *authorName;
+
+/** 图片 */
+@property (nonatomic,copy) NSString *imgurl;
+
+/** html */
+@property (nonatomic,copy) NSString *shareurl;
+
+/** 时间 */
+@property (nonatomic,copy) NSString *newstime;
+
+/**  */
+@property (nonatomic,copy) NSArray *imgList;
 
 @end
 
-
 /**
-"_id":Object{...},
-"ID":838042661,
-"url":"http://api.football.app887.com/article.html?id=838042661",
-"urls":"https://apifootball.app887.com/article.html?id=838042661",
-"date":"2017-08-17 18:30:17",
-"sourcename":"欧冠",
-"content168":"虎扑8月17日讯 著名的足球评述员詹俊老师新赛季加盟PPTV聚力体育，将独家解说英超、欧冠和西甲等重要赛事。45岁的詹俊出生于广东省潮州市，1995年从中山大学毕业后进入了广东电视台体育部工作。1997年，詹俊第一次解说英超赛事，此后20年时间里，詹俊逐渐的被球迷所熟知和认可。除了英超联赛，詹俊还多次解说西甲、欧冠等赛事。此外，詹俊还",
-"duration":"",
-"imglink":"https://c1.hoopchina.com.cn/uploads/star/event/images/170817/6645f82a8d3a6929cb27085c593470cc9fe87e27.jpg",
-"videolink":"",
-"author":"虎扑足球",
-"title":"zhei球进了！詹俊老师新赛季将在PPTV解说",
-"titlespelling":"将在|进了|新赛季|老师|zhei",
-"TYPE":"国际足球",
-"SORT":0,
-"PUBLISH":true,
-"OPENSOURCE":true,
-"DELFLAG":false,
-"CTIME":"2017-08-17 18:30:17",
-"TYPESETTING":0,
-"readarts":1089,
-"sharearts":29,
-"talkcount":7,
-"likecount":8,
-"faved":0,
-"liked":0,
-"recommond":1,
-"talks":Array[3]
-*/
-
-
+"isoftop":1,
+"columns":"国际足球",
+"day_date_order":1531756800027,
+"authorHeadImage":"http://resource.ttplus.cn/editor/headphoto/user_default.jpg",
+"pid":143680,
+"title":"法国队回国举行夺冠游行+造访爱丽舍宫",
+"type":4,
+"is_best":0,
+"imgurl":"http://resource.ttplus.cn/publish/app/pics/2018/07/17/166673/69c8b4ff-e38b-44ca-9c65-ed5a34c1cb54.jpg@!img01",
+"newstime":1531794334215,
+"authorAuthentication":0,
+"id":166673,
+"shareurl":"http://resource.ttplus.cn/publish/app/pics/2018/07/17/166673/multi_pic.html",
+"keyword":"2018世界杯,法国队",
+"imgType":0,
+"commentnum":0,
+"thumbnail":"http://resource.ttplus.cn/publish/app/pics/2018/07/17/166673/thumbnail/69c8b4ff-e38b-44ca-9c65-ed5a34c1cb54.jpg@!img02",
+"shorttitle":"法国队回国举行夺冠游行+造访爱丽舍宫",
+"searchcontent":"法国队回国举行夺冠游行+造访爱丽舍宫,孙奇,2018世界杯,法国队,国际足球,",
+"picnum":27,
+"authorDescription":"",
+"label":"图集",
+"authorId":"d9f2cc1d-93e3-4342-b047-ed1b8559e096",
+"likenum":0,
+"hot_value":1956.05,
+"authorSubscribe":0,
+"best_order":0,
+"authorName":"孙奇",
+"picsList":"http://resource.ttplus.cn/publish/app/pics/2018/07/17/166673/picsList.json",
+ */
 
 
 

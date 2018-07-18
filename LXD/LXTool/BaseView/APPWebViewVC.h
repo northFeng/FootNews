@@ -13,4 +13,7 @@
 /** htmlUrl */
 @property (nonatomic,copy) NSString *htmlUrl;
 
+/** <#title#> */
+@property (nonatomic,assign) BOOL isGo;
+
 @end

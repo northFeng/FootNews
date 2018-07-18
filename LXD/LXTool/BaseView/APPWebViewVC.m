@@ -81,7 +81,15 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     
-    return YES;
+    NSString *url = request.URL.absoluteString;
+    //  [url hasSuffix:@"share1.html"] || [url hasSuffix:@"multi_pic.html"] || [url hasSuffix:@"one_live.html"]
+    if ([url hasPrefix:@"http://resource"] || _isGo == YES) {
+        return YES;
+    }else{
+        [self showMessage:@"版权由体坛云数据提供,请到体坛官网浏览更多详情"];
+    }
+    
+    return NO;
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [self startWaitingAnimating];
@@ -90,6 +98,8 @@
     
     [self stopWaitingAnimating];
 }
+
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [self showMessage:@"网络不给力"];
 }

@@ -136,7 +136,7 @@
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.naviBarView);
         make.height.mas_equalTo(self.naviBarView.mas_height);
-        make.width.mas_equalTo(150);
+        make.width.mas_equalTo(250);
     }];
     
     //分割线

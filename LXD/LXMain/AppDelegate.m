@@ -16,10 +16,17 @@
 #import "GFTabBarController.h"
 
 //#import "TodayViewController.h"
-//#import "CDDViewController.h"
-//#import "CSDViewController.h"
-#import "TotalViewController.h"
+#import "TodayDataVC.h"
 
+#import "BGVC.h"
+
+//#import "CSDViewController.h"
+#import "ZLVC.h"
+
+//#import "TBVC.h"
+#import "VideoVC.h"
+
+#import "LoginVC.h"
 
 // 引入JPush功能所需头文件
 #import "JPUSHService.h"
@@ -38,6 +45,55 @@
 @end
 
 @implementation AppDelegate
+
+
+///设置根视图
+- (void)setRootViewController{
+    
+    TodayDataVC *todayVC = [[TodayDataVC alloc] init];
+    
+    //BGVC *cddVC = [[BGVC alloc] init];//八卦
+    
+    ZLVC *csdVC = [[ZLVC alloc] init];
+    
+    //TBVC *tbVC = [[TBVC alloc] init];
+    VideoVC *videoVC = [[VideoVC alloc] init];
+    
+    GFTabBarController *gfTabBar = [GFTabBarController sharedInstance];
+    gfTabBar.viewControllers = @[videoVC,csdVC];//添加子视图
+    
+    
+    //默认图片
+//    NSArray *arrayNomal = @[@"today_normal",@"global_normal",@"foot_normal"];
+//    //选中按钮的图片
+//    NSArray *arraySelect = @[@"today_select",@"global",@"foot"];
+//    //item的标题
+//    NSArray *arrayTitle = @[@"头条",@"体报",@"赛事"];
+    
+    NSArray *arrayNomal = @[@"global_normal",@"foot_normal"];
+    //选中按钮的图片
+    NSArray *arraySelect = @[@"global",@"foot"];
+    //item的标题
+    NSArray *arrayTitle = @[@"头条",@"赛事"];
+    
+    [gfTabBar creatItemsWithDefaultIndex:0 normalImageNameArray:arrayNomal selectImageArray:arraySelect itemsTitleArray:arrayTitle];//设置items并设置第一个显示位置
+    
+    
+    GFNavigationController *navi = [[GFNavigationController alloc] initWithRootViewController:gfTabBar];
+    navi.navigationBar.hidden = YES;//隐藏系统导航条（只是隐藏的NavigationController上的naviBar，因此返回手势存在）
+    //设置根视图
+    self.window.rootViewController = navi;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"user"];
+    NSString *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    
+    if (user.length == 0) {
+        //未注册
+        LoginVC *loginVC = [[LoginVC alloc] initWithNibName:@"LoginVC" bundle:nil];
+        [gfTabBar presentViewController:loginVC animated:YES completion:nil];
+    }
+    
+}
 
 ///获取后天的URL
 - (void)getNetUrl{
@@ -214,42 +270,6 @@
     }
 }
 
-
-
-
-///设置根视图
-- (void)setRootViewController{
-    
-//    TodayViewController *todayVC = [[TodayViewController alloc] init];
-//    CDDViewController *cddVC = [[CDDViewController alloc] init];
-//    CSDViewController *csdVC = [[CSDViewController alloc] init];
-    
-    TotalViewController *totalVCOne = [[TotalViewController alloc] init];
-    totalVCOne.type = 0;
-    
-    TotalViewController *totalVCTwo = [[TotalViewController alloc] init];
-    totalVCTwo.type = 1;
-    
-    GFTabBarController *gfTabBar = [GFTabBarController sharedInstance];
-    gfTabBar.viewControllers = @[totalVCOne,totalVCTwo];//添加子视图
-    
-    
-    //默认图片
-    NSArray *arrayNomal = @[@"global_normal",@"foot_normal"];
-    //选中按钮的图片
-    NSArray *arraySelect = @[@"global",@"foot"];
-    //item的标题
-    NSArray *arrayTitle = @[@"国际足球",@"中国足球"];
-    
-    [gfTabBar creatItemsWithDefaultIndex:0 normalImageNameArray:arrayNomal selectImageArray:arraySelect itemsTitleArray:arrayTitle];//设置items并设置第一个显示位置
-    
-    
-    GFNavigationController *navi = [[GFNavigationController alloc] initWithRootViewController:gfTabBar];
-    navi.navigationBar.hidden = YES;//隐藏系统导航条（只是隐藏的NavigationController上的naviBar，因此返回手势存在）
-    //设置根视图
-    self.window.rootViewController = navi;
-    
-}
 
 - (void)analyticsViewController {
     //放到异步线程去执行

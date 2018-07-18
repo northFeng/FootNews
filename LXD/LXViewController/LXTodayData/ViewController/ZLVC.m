@@ -1,23 +1,20 @@
 //
-//  CDDViewController.m
+//  ZLVC.m
 //  LXD
 //
-//  Created by gaoyafeng on 2018/6/7.
+//  Created by gaoyafeng on 2018/7/17.
 //  Copyright © 2018年 north_feng. All rights reserved.
 //
 
-#import "CDDViewController.h"
+#import "ZLVC.h"
 
-#import "GFScoreCell.h"
+#import "ZLCell.h"
 
-@interface CDDViewController ()
-
-
-
+@interface ZLVC ()
 
 @end
 
-@implementation CDDViewController
+@implementation ZLVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +31,7 @@
 ///设置导航栏样式
 - (void)setNaviBarState{
     
-    self.naviBarTitle = @"及时比分";
+    self.naviBarTitle = @"赛事资讯";
 }
 
 #pragma mark - 初始化界面基础数据
@@ -56,29 +53,23 @@
     self.tableView.frame = CGRectMake(0, kTopNaviBarHeight, kScreenWidth, kScreenHeight - (kTopNaviBarHeight + kTabBarHeight));
     self.tableView.backgroundColor = [UIColor whiteColor];
     //注册cell
-    [self.tableView registerNib:[UINib nibWithNibName:@"GFScoreCell" bundle:nil] forCellReuseIdentifier:@"GFScoreCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ZLCell" bundle:nil] forCellReuseIdentifier:@"ZLCell"];
     
 }
-
-
 
 #pragma mark - 重写下面三个方法即可
 ///请求数据(对该方法进行重写便可请求字典的请求)
 - (void)requestNetData{
     NSLog(@"请求数据");
     
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    //?league_id=&status=1&match_diff_day=0
+    //NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
-    [params setObject:@"" forKey:@"league_id"];
-    [params setObject:@"1" forKey:@"status"];
-    [params setObject:@"0" forKey:@"match_diff_day"];
+    [self requestNetDataUrl:@"http://api.ttplus.cn/match_managerment/list" params:nil];
     
-    //http://www.buyinball.com/app-web/api/match/qry_matchs?league_id=&status=1&match_diff_day=0
-    //http://www.buyinball.com/app-web/api/match/qry_matchs?league_id=&status=1&match_diff_day=0
-    [self requestNetDataUrl:@"match/qry_matchs" params:params];
 }
 
+#pragma mark - 简版网络请求
+//************************* 简版网络请求 *************************
 ///请求网络数据(分页请求)
 - (void)requestNetDataUrl:(NSString *)url params:(NSDictionary *)params{
     
@@ -86,23 +77,24 @@
     [self startWaitingAnimating];
     self.tableView.userInteractionEnabled = NO;
     
-    [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [APPHttpTool getWithUrl:url params:params success:^(id response, NSInteger code) {
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
         weakSelf.tableView.userInteractionEnabled = YES;
         ///隐藏加载动画
         [weakSelf stopWaitingAnimating];
         
-        NSString *message = [response objectForKey:@"result_msg"];
+        //NSString *message = [response objectForKey:@"result_msg"];
+        
         if (code == 0) {
             //请求成功
             //隐藏无网占位图
             
-            [weakSelf requestNetDataSuccess:response[@"qry_matchs"]];
+            [weakSelf requestNetDataSuccess:response];
         }else{
             weakSelf.page --;
             // 错误处理
-            [weakSelf showMessage:message];
+            [weakSelf showMessage:@"网络有问题..."];
         }
         
     } fail:^(NSError *error) {
@@ -138,23 +130,29 @@
 ///请求成功数据处理
 - (void)requestNetDataSuccess:(NSDictionary *)dicData{
     
-    self.tableView.mj_footer.hidden = YES;
-    
-    NSArray *dataArray = dicData[@"data"];
-    if (dataArray.count) {
+    if (dicData) {
         
-        for (NSDictionary *dic in dataArray) {
+        NSArray *listData = dicData[@"content"];
+        
+        if (self.page == 0) {
             
-            ScoreModel *model = [[ScoreModel alloc] init];
+            [self.arrayDataList removeAllObjects];
+            
+        }
+        
+        for (NSDictionary *dic in listData) {
+            
+            ZLModel *model = [[ZLModel alloc] init];
             [model yy_modelSetWithDictionary:dic];
             
             [self.arrayDataList addObject:model];
         }
-        
     }
     
+    self.tableView.mj_footer.hidden = YES;
     //刷新数据&&处理页面
     [self.tableView reloadData];
+    
 }
 
 ///请求数据失败处理
@@ -177,39 +175,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    GFScoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GFScoreCell" forIndexPath:indexPath];
+    ZLCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZLCell" forIndexPath:indexPath];
     
     [cell setCellModel:self.arrayDataList[indexPath.row]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 100;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *backView = [[UIView alloc] init];
-    
-    UILabel *label = [[UILabel alloc] init];
-    label.text = @"所有数据半个小时更新一次...";
-    label.font = [UIFont systemFontOfSize:15];
-    label.backgroundColor = [UIColor lightGrayColor];
-    label.textColor = [UIColor redColor];
-    [backView addSubview:label];
-    label.sd_layout.leftSpaceToView(backView, 0).topEqualToView(backView).bottomEqualToView(backView).rightSpaceToView(backView, 0);
-    return backView;
+    return 50;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (self.arrayDataList.count) {
-        return 30;
-    }else{
-        return 0.1;
-    }
+    
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -219,12 +203,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"点击Cell");
     
+    APPWebViewVC *webVC = [[APPWebViewVC alloc] init];
+    ZLModel *model = self.arrayDataList[indexPath.row];
+    webVC.htmlUrl = model.url;
+    webVC.naviBarTitle = model.title;
+    webVC.isGo = YES;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
-#pragma mark - cell点击事件进入统计详情
-- (void)gotoDetailVC:(NSInteger)type formType:(NSInteger)typeTwo{
-    
-}
 
 
 @end
