@@ -19,7 +19,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
-@property (weak, nonatomic) IBOutlet UIButton *resigerBtn;
 
 @end
 
@@ -40,14 +39,11 @@
     _loginBtn.layer.cornerRadius = 4;
     _loginBtn.layer.masksToBounds = YES;
     
-    _resigerBtn.layer.cornerRadius = 4;
-    _resigerBtn.layer.masksToBounds = YES;
     
     [self createTableView];
     
     [self.tableView removeFromSuperview];
     
-    _resigerBtn.hidden = YES;
     _password.secureTextEntry = YES;
     
     //判断是否注册过

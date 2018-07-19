@@ -31,7 +31,7 @@
 ///设置导航栏样式
 - (void)setNaviBarState{
     
-    self.naviBarTitle = @"赛事资讯";
+    self.naviBarTitle = @"赛事查询";
 }
 
 #pragma mark - 初始化界面基础数据

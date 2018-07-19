@@ -155,7 +155,7 @@
     btn.backgroundColor = [UIColor redColor];
     [btn addTarget:self action:@selector(exitAccount) forControlEvents:UIControlEventTouchUpInside];
     [backView addSubview:btn];
-    btn.sd_layout.centerXEqualToView(backView).centerYEqualToView(backView).widthIs(kScreenWidth - 30).heightIs(30);
+    btn.sd_layout.centerXEqualToView(backView).centerYEqualToView(backView).widthIs(kScreenWidth - 30).heightIs(40);
     
     return backView;
 }

@@ -229,7 +229,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 160 * KSCALE;
+    return 170 * KSCALE;
 }
 
 

@@ -69,11 +69,11 @@
 //    //item的标题
 //    NSArray *arrayTitle = @[@"头条",@"体报",@"赛事"];
     
-    NSArray *arrayNomal = @[@"global_normal",@"foot_normal",@"foot_normal"];
+    NSArray *arrayNomal = @[@"global_normal",@"foot_normal",@"my_normal"];
     //选中按钮的图片
-    NSArray *arraySelect = @[@"global",@"foot",@"foot"];
+    NSArray *arraySelect = @[@"global",@"foot",@"my"];
     //item的标题
-    NSArray *arrayTitle = @[@"头条",@"赛事",@"球门"];
+    NSArray *arrayTitle = @[@"头条",@"赛事",@"我的"];
     
     [gfTabBar creatItemsWithDefaultIndex:0 normalImageNameArray:arrayNomal selectImageArray:arraySelect itemsTitleArray:arrayTitle];//设置items并设置第一个显示位置
     
