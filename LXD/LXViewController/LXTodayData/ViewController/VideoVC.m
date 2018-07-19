@@ -64,7 +64,7 @@
     __weak typeof(self) weakSelf = self;
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        weakSelf.page = 1;
+        weakSelf.page = 0;
         [weakSelf requestNetData];
     }];
     
@@ -247,7 +247,7 @@
     
     VideoModel *model = self.arrayDataList[indexPath.row];
     GFAVPlayerViewController *videoVC = [[GFAVPlayerViewController alloc] init];
-    videoVC.naviBarTitle = model.title;
+    videoVC.naviBarTitle = model.shorttitle;
     videoVC.model = model;
     [self.navigationController pushViewController:videoVC animated:YES];
 }

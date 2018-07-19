@@ -8,6 +8,8 @@
 
 #import "GFTabBarController.h"
 
+#import "LoginVC.h"
+
 //常量命名规则（驼峰式命名规则），所有的单词首字母大写和加上与类名有关的前缀:
 
 //tabBar背景颜色
@@ -333,6 +335,32 @@
 //是否隐藏
 - (BOOL)prefersStatusBarHidden{
     return [self.selectedViewController prefersStatusBarHidden];
+}
+
+
+
+#pragma mark - 弹出登录视图
+- (void)popLoginVC{
+    
+    //判断是否注册过
+    NSString *loginKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginKey"];
+    
+    if (loginKey.length) {
+        //登录过
+        NSArray *arrayInfo = [[NSUserDefaults standardUserDefaults] objectForKey:loginKey];
+        if ([arrayInfo[4] isEqualToString:@"1"]) {
+            //退出 && 弹出登录页面
+            LoginVC *loginVC = [[LoginVC alloc] initWithNibName:@"LoginVC" bundle:nil];
+            [self presentViewController:loginVC animated:YES completion:nil];
+        }else{
+            //正在登录
+            return ;
+        }
+    }else{
+        //未登录过
+        LoginVC *loginVC = [[LoginVC alloc] initWithNibName:@"LoginVC" bundle:nil];
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
 }
 
 

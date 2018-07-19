@@ -15,18 +15,15 @@
 
 #import "GFTabBarController.h"
 
-//#import "TodayViewController.h"
-#import "TodayDataVC.h"
+//#import "TodayDataVC.h"
 
 #import "BGVC.h"
-
-//#import "CSDViewController.h"
 #import "ZLVC.h"
 
 //#import "TBVC.h"
 #import "VideoVC.h"
-
 #import "LoginVC.h"
+#import "MineVC.h"
 
 // 引入JPush功能所需头文件
 #import "JPUSHService.h"
@@ -50,7 +47,7 @@
 ///设置根视图
 - (void)setRootViewController{
     
-    TodayDataVC *todayVC = [[TodayDataVC alloc] init];
+    //TodayDataVC *todayVC = [[TodayDataVC alloc] init];
     
     //BGVC *cddVC = [[BGVC alloc] init];//八卦
     
@@ -59,8 +56,10 @@
     //TBVC *tbVC = [[TBVC alloc] init];
     VideoVC *videoVC = [[VideoVC alloc] init];
     
+    MineVC *myVC = [[MineVC alloc] init];
+    
     GFTabBarController *gfTabBar = [GFTabBarController sharedInstance];
-    gfTabBar.viewControllers = @[videoVC,csdVC];//添加子视图
+    gfTabBar.viewControllers = @[videoVC,csdVC,myVC];//添加子视图
     
     
     //默认图片
@@ -70,11 +69,11 @@
 //    //item的标题
 //    NSArray *arrayTitle = @[@"头条",@"体报",@"赛事"];
     
-    NSArray *arrayNomal = @[@"global_normal",@"foot_normal"];
+    NSArray *arrayNomal = @[@"global_normal",@"foot_normal",@"foot_normal"];
     //选中按钮的图片
-    NSArray *arraySelect = @[@"global",@"foot"];
+    NSArray *arraySelect = @[@"global",@"foot",@"foot"];
     //item的标题
-    NSArray *arrayTitle = @[@"头条",@"赛事"];
+    NSArray *arrayTitle = @[@"头条",@"赛事",@"球门"];
     
     [gfTabBar creatItemsWithDefaultIndex:0 normalImageNameArray:arrayNomal selectImageArray:arraySelect itemsTitleArray:arrayTitle];//设置items并设置第一个显示位置
     
@@ -84,14 +83,8 @@
     //设置根视图
     self.window.rootViewController = navi;
     
-    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"user"];
-    NSString *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
-    
-    if (user.length == 0) {
-        //未注册
-        LoginVC *loginVC = [[LoginVC alloc] initWithNibName:@"LoginVC" bundle:nil];
-        [gfTabBar presentViewController:loginVC animated:YES completion:nil];
-    }
+    //判断是否登录
+    [gfTabBar popLoginVC];
     
 }
 

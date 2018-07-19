@@ -36,6 +36,11 @@
 - (void)setSelectItemBtnIndex:(NSInteger)indexItem;
 
 
+
+#pragma mark - 弹出登录视图
+- (void)popLoginVC;
+
+
 @end
 
 /*

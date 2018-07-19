@@ -65,13 +65,14 @@
     
     
     _labelDes = [[UITextView alloc] init];
-    _labelDes.text = _model.videodesc;
     _labelDes.font = [UIFont systemFontOfSize:15];
     _labelDes.textAlignment = NSTextAlignmentJustified;
     _labelDes.textColor = [UIColor lightGrayColor];
     _labelDes.editable = NO;
     [self.view addSubview:_labelDes];
     _labelDes.sd_layout.leftSpaceToView(self.view, 15).rightSpaceToView(self.view, 15).topSpaceToView(imgView,15).bottomSpaceToView(self.view, 15);
+    
+    _labelDes.text = [NSString stringWithFormat:@"标题：%@\n\n简介：%@\n\n详情：%@",_model.title,_model.summary,_model.searchcontent];
     
     [self.view bringSubviewToFront:_avPlayer];
     

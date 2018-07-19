@@ -16,6 +16,9 @@
 /** title */
 @property (nonatomic,copy) NSString *title;
 
+/**  */
+@property (nonatomic,copy) NSString *shorttitle;
+
 /** authorName */
 @property (nonatomic,copy) NSString *authorName;
 
@@ -30,6 +33,15 @@
 
 /** 作者头像 */
 @property (nonatomic,copy) NSString *authorHeadImage;
+
+/** 关键词 */
+@property (nonatomic,copy) NSString *keywords;
+
+/** 总结 */
+@property (nonatomic,copy) NSString *summary;
+
+/** <#title#> */
+@property (nonatomic,copy) NSString *searchcontent;
 
 
 @end

@@ -82,6 +82,13 @@
 		ABC8D56920FF36510049B062 /* av_progressTime@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC8D55C20FF36510049B062 /* av_progressTime@2x.png */; };
 		ABC8D57220FF50E50049B062 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC8D57020FF50E50049B062 /* LoginVC.m */; };
 		ABC8D57320FF50E50049B062 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC8D57120FF50E50049B062 /* LoginVC.xib */; };
+		ABC8D57621002F6D0049B062 /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC8D57521002F6D0049B062 /* MineVC.m */; };
+		ABC8D57A21002FD10049B062 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC8D57821002FD10049B062 /* MyCell.m */; };
+		ABC8D57B21002FD10049B062 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC8D57921002FD10049B062 /* MyCell.xib */; };
+		ABC8D57D210032890049B062 /* footImg.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC8D57C210032890049B062 /* footImg.png */; };
+		ABC8D57F21003F470049B062 /* icon_wo.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC8D57E21003F470049B062 /* icon_wo.png */; };
+		ABC8D583210040F10049B062 /* GFSelectPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC8D581210040F10049B062 /* GFSelectPhoto.m */; };
+		ABC8D588210085900049B062 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC8D587210085900049B062 /* icon.png */; };
 		ABE023A220CE51E500C440D7 /* TodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE023A120CE51E500C440D7 /* TodayModel.m */; };
 /* End PBXBuildFile section */
 
@@ -234,6 +241,16 @@
 		ABC8D56F20FF50E50049B062 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		ABC8D57020FF50E50049B062 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		ABC8D57120FF50E50049B062 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		ABC8D57421002F6D0049B062 /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
+		ABC8D57521002F6D0049B062 /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
+		ABC8D57721002FD10049B062 /* MyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		ABC8D57821002FD10049B062 /* MyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		ABC8D57921002FD10049B062 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		ABC8D57C210032890049B062 /* footImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footImg.png; sourceTree = "<group>"; };
+		ABC8D57E21003F470049B062 /* icon_wo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_wo.png; sourceTree = "<group>"; };
+		ABC8D581210040F10049B062 /* GFSelectPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSelectPhoto.m; sourceTree = "<group>"; };
+		ABC8D582210040F10049B062 /* GFSelectPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSelectPhoto.h; sourceTree = "<group>"; };
+		ABC8D587210085900049B062 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		ABE023A020CE51E500C440D7 /* TodayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayModel.h; sourceTree = "<group>"; };
 		ABE023A120CE51E500C440D7 /* TodayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayModel.m; sourceTree = "<group>"; };
 		C5D851935444B29BB1B4CD39 /* Pods-LXD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LXD/Pods-LXD.debug.xcconfig"; sourceTree = "<group>"; };
@@ -332,6 +349,7 @@
 		AB90362020C9217200592811 /* LXTool */ = {
 			isa = PBXGroup;
 			children = (
+				ABC8D580210040F10049B062 /* PhoneHandle */,
 				ABC8D52720FF2D770049B062 /* GFAVPlayer */,
 				ABAD5DE820F0C8C400DC8B5F /* Resource */,
 				ABAD5DC620F0B34D00DC8B5F /* SDCycleScrollView */,
@@ -494,6 +512,9 @@
 				ABC8D52220FF2B7A0049B062 /* VideoCell.h */,
 				ABC8D52320FF2B7A0049B062 /* VideoCell.m */,
 				ABC8D52420FF2B7A0049B062 /* VideoCell.xib */,
+				ABC8D57721002FD10049B062 /* MyCell.h */,
+				ABC8D57821002FD10049B062 /* MyCell.m */,
+				ABC8D57921002FD10049B062 /* MyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -511,6 +532,8 @@
 				AB151CE920FDE23B006297A8 /* TBVC.m */,
 				ABC8D51C20FF253B0049B062 /* VideoVC.h */,
 				ABC8D51D20FF253B0049B062 /* VideoVC.m */,
+				ABC8D57421002F6D0049B062 /* MineVC.h */,
+				ABC8D57521002F6D0049B062 /* MineVC.m */,
 				ABC8D56F20FF50E50049B062 /* LoginVC.h */,
 				ABC8D57020FF50E50049B062 /* LoginVC.m */,
 				ABC8D57120FF50E50049B062 /* LoginVC.xib */,
@@ -634,6 +657,9 @@
 		ABAD5DE820F0C8C400DC8B5F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				ABC8D587210085900049B062 /* icon.png */,
+				ABC8D57E21003F470049B062 /* icon_wo.png */,
+				ABC8D57C210032890049B062 /* footImg.png */,
 				AB151CE120FDCF1C006297A8 /* landScreen.png */,
 				ABAD5DE920F0C8D100DC8B5F /* img_holder.png */,
 			);
@@ -674,6 +700,15 @@
 				ABC8D55C20FF36510049B062 /* av_progressTime@2x.png */,
 			);
 			path = ImageResource;
+			sourceTree = "<group>";
+		};
+		ABC8D580210040F10049B062 /* PhoneHandle */ = {
+			isa = PBXGroup;
+			children = (
+				ABC8D582210040F10049B062 /* GFSelectPhoto.h */,
+				ABC8D581210040F10049B062 /* GFSelectPhoto.m */,
+			);
+			path = PhoneHandle;
 			sourceTree = "<group>";
 		};
 		CBF58C2B7BAE049092D7A811 /* Pods */ = {
@@ -795,6 +830,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC8D57F21003F470049B062 /* icon_wo.png in Resources */,
 				ABC8D56820FF36510049B062 /* ic_video_minimize@2x.png in Resources */,
 				AB9035FB20C920EB00592811 /* LaunchScreen.storyboard in Resources */,
 				ABC8D56420FF36510049B062 /* ic_video_paly@3x.png in Resources */,
@@ -802,6 +838,7 @@
 				ABAD5DE720F0C53500DC8B5F /* TodayHomeCell.xib in Resources */,
 				AB151CE720FDD0D4006297A8 /* BGTCell.xib in Resources */,
 				ABC8D56720FF36510049B062 /* ic_video_minimize@3x.png in Resources */,
+				ABC8D57D210032890049B062 /* footImg.png in Resources */,
 				AB5A104A20F4654800322FD8 /* GFPersonCell.xib in Resources */,
 				ABC8D55E20FF36510049B062 /* ic_detail_back@2x.png in Resources */,
 				AB9035F820C920EB00592811 /* Assets.xcassets in Resources */,
@@ -819,7 +856,9 @@
 				ABC8D56020FF36510049B062 /* ic_video_play_big@2x.png in Resources */,
 				ABAD5DEA20F0C8D100DC8B5F /* img_holder.png in Resources */,
 				AB9035F620C920EA00592811 /* Main.storyboard in Resources */,
+				ABC8D588210085900049B062 /* icon.png in Resources */,
 				ABC8D56520FF36510049B062 /* ic_video_paly@2x.png in Resources */,
+				ABC8D57B21002FD10049B062 /* MyCell.xib in Resources */,
 				ABC8D56220FF36510049B062 /* ic_video_pause@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -897,7 +936,9 @@
 				ABC8D53E20FF2D770049B062 /* GFCacheProgressSlider.m in Sources */,
 				AB90365520C9381B00592811 /* ExampleViewController.m in Sources */,
 				ABC8D54020FF2D770049B062 /* GFAVPlayerItem.m in Sources */,
+				ABC8D57A21002FD10049B062 /* MyCell.m in Sources */,
 				ABC8D53F20FF2D770049B062 /* GFAVPlayerView.m in Sources */,
+				ABC8D583210040F10049B062 /* GFSelectPhoto.m in Sources */,
 				ABAD5DE620F0C53500DC8B5F /* TodayHomeCell.m in Sources */,
 				ABAD5DDB20F0B34D00DC8B5F /* UIView+SDExtension.m in Sources */,
 				AB5A104920F4654800322FD8 /* GFPersonCell.m in Sources */,
@@ -905,6 +946,7 @@
 				AB90365220C9336A00592811 /* APPKeyInfo.m in Sources */,
 				AB90364820C92A0500592811 /* APPBaseViewController.m in Sources */,
 				AB5A104D20F4AA8D00322FD8 /* WebUrlViewController.m in Sources */,
+				ABC8D57621002F6D0049B062 /* MineVC.m in Sources */,
 				ABAD5DDC20F0B34D00DC8B5F /* SDViewController.m in Sources */,
 				AB151CF120FDE354006297A8 /* TBCell.m in Sources */,
 				AB151CE620FDD0D4006297A8 /* BGTCell.m in Sources */,
