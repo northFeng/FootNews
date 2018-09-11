@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		077CCDD9FB55421EC99E8E2F /* libPods-LXD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FB55AAA709120033C45915 /* libPods-LXD.a */; };
+		8DC90E56214760F5002AC915 /* GFObjcet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC90E55214760F5002AC915 /* GFObjcet.m */; };
 		AB0393B220F846D300C656B7 /* GFMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0393B020F846D300C656B7 /* GFMessageCell.m */; };
 		AB0393B320F846D300C656B7 /* GFMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0393B120F846D300C656B7 /* GFMessageCell.xib */; };
 		AB0393B620F8483900C656B7 /* GFMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0393B520F8483900C656B7 /* GFMessageModel.m */; };
@@ -112,6 +113,8 @@
 /* Begin PBXFileReference section */
 		23FB55AAA709120033C45915 /* libPods-LXD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LXD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFA8FF43587D7222578C906 /* Pods-LXD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXD.release.xcconfig"; path = "Pods/Target Support Files/Pods-LXD/Pods-LXD.release.xcconfig"; sourceTree = "<group>"; };
+		8DC90E54214760F5002AC915 /* GFObjcet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFObjcet.h; sourceTree = "<group>"; };
+		8DC90E55214760F5002AC915 /* GFObjcet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFObjcet.m; sourceTree = "<group>"; };
 		AB0393AF20F846D300C656B7 /* GFMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFMessageCell.h; sourceTree = "<group>"; };
 		AB0393B020F846D300C656B7 /* GFMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFMessageCell.m; sourceTree = "<group>"; };
 		AB0393B120F846D300C656B7 /* GFMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFMessageCell.xib; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 			children = (
 				AB9035EE20C920EA00592811 /* AppDelegate.h */,
 				AB9035EF20C920EA00592811 /* AppDelegate.m */,
+				8DC90E54214760F5002AC915 /* GFObjcet.h */,
+				8DC90E55214760F5002AC915 /* GFObjcet.m */,
 			);
 			path = LXMain;
 			sourceTree = "<group>";
@@ -961,6 +966,7 @@
 				AB90364F20C930F200592811 /* MBProgressHUDTool.m in Sources */,
 				ABAD5DDE20F0B34D00DC8B5F /* TADotView.m in Sources */,
 				ABAD5DDD20F0B34D00DC8B5F /* SDCollectionViewCell.m in Sources */,
+				8DC90E56214760F5002AC915 /* GFObjcet.m in Sources */,
 				ABAD5DDF20F0B34D00DC8B5F /* TAPageControl.m in Sources */,
 				ABC8D54E20FF2D770049B062 /* GFAVPlayerViewController.m in Sources */,
 				AB5A104520F4634500322FD8 /* GFPersonModel.m in Sources */,
