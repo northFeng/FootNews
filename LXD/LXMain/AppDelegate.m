@@ -153,7 +153,9 @@
     
 }
 
-
+/**
+ 如果 App 状态为未运行，此函数将被调用，如果 launchOptions 包含 UIApplicationLaunchOptionsRemoteNotificationKey 表示用户点击 apn 通知导致 app 被启动运行；如果不含有对应键值则表示 App 不是因点击 apn 而被启动，可能为直接点击 icon 被启动或其他。
+ */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -223,6 +225,9 @@
     
 }
 
+/**
+ 基于 iOS 7 及以上的系统版本，如果是使用 iOS 7 的 Remote Notification 特性那么处理函数需要使用
+ */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
     // Required,For systems with less than or equal to iOS7
@@ -236,6 +241,9 @@
      
 }
 
+/**
+ 基于 iOS 6 及以下的系统版本，如果 App 状态为正在前台或者点击通知栏的通知消息，那么此函数将被调用，并且可通过 AppDelegate 的 applicationState 是否为 UIApplicationStateActive 判断程序是否在前台运行。此种情况在此函数中处理：
+ */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
     // Required,For systems with less than or equal to iOS6
