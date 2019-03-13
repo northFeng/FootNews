@@ -5,6 +5,7 @@
 //  Created by gaoyafeng on 2018/4/24.
 //  Copyright © 2018年 斑马. All rights reserved.
 //  自己封装的
+//  极大激发等死啊
 
 #import <UIKit/UIKit.h>
 
