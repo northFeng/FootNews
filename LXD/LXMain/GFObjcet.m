@@ -10,4 +10,11 @@
 
 @implementation GFObjcet
 
+
+- (void)login{
+    
+    NSLog(@"登录了");
+    
+}
+
 @end

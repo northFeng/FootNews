@@ -10,4 +10,7 @@
 
 @interface GFObjcet : NSObject
 
+///姓名
+@property (nonatomic,copy,nullable) NSString *name;
+
 @end
