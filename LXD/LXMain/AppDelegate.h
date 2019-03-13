@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+///hfhf
+@property (nonatomic,copy,nullable) NSString *ceshi;
 
 @end
 
