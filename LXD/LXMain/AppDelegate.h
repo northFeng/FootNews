@@ -19,5 +19,8 @@
 ///3.0
 @property (nonatomic,copy,nullable) NSString *name;
 
+///3.0 _2
+@property (nonatomic,copy,nullable) NSString *age;
+
 @end
 
