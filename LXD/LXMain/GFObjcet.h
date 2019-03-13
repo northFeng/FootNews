@@ -13,4 +13,7 @@
 ///姓名
 @property (nonatomic,copy,nullable) NSString *name;
 
+///
+@property (nonatomic,copy,nullable) NSString *age;
+
 @end
