@@ -16,5 +16,8 @@
 ///hfhf
 @property (nonatomic,copy,nullable) NSString *ceshi;
 
+///3.0
+@property (nonatomic,copy,nullable) NSString *name;
+
 @end
 
