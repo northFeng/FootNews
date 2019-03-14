@@ -22,4 +22,7 @@
 ///3.2
 @property (nonatomic,copy,nullable) NSString *feng32;
 
+///3.1
+@property (nonatomic,copy,nullable) NSString *feng31;
+
 @end
