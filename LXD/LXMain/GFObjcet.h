@@ -19,4 +19,7 @@
 ///3.2
 @property (nonatomic,copy,nullable) NSString *xiaoming;
 
+///3.2
+@property (nonatomic,copy,nullable) NSString *feng32;
+
 @end
